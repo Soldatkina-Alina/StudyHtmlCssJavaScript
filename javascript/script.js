@@ -13,13 +13,17 @@
 
     var indexYear = document.getElementById("month").selectedIndex;
     var year = document.getElementById("year").options[indexYear].text;
+
+    var ifWrong = false;
     
     if (name.value.length > 10 || name.value.length < 1) {
         name.style.borderColor = "red";
+        isWrong = true;
     }
 
     if (lastname.value.length > 10 || lastname.value.length < 1) {
         lastname.style.borderColor = "red";
+        isWrong = true;
     }
 
     if (!parseInt(day) && !parseInt(year) && month === "Месяц") {
@@ -32,6 +36,12 @@
             document.getElementById("year").style.borderColor = "red";
         if (month === "Месяц")
             document.getElementById("month").style.borderColor = "red";
+        isWrong = true;
+    }
+
+    if (isWrong) {
+        event.preventDefault();
+        return false;
     }
 
     return true;
