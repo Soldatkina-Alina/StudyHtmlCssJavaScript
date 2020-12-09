@@ -1,51 +1,100 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta charset="ru">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Первая страница!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Обучение</title>
 </head>
 <body>
-    <h1>Задание 1!</h1>
-    <div class="col-md-8 order-md-1">
-        <h4 class="mb-3">Основная информация</h4>
-        <form class="needs-validation" novalidate>
-            <div class=" mb-3">
-                <label for="firstName">Имя</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                    Неверный ввод имени.
+    <div class="container-fluid h-100">
+        <div class="row">
+            <div class="col-md-4"> </div>
+            <div class="col-md-4 border rounded p-3 m-4 bg-white h-100 ">
+                <div class="form-group">
+                    <h4 class="text-center">Регистрация</h4>
+                    <label for="name">Ваше имя:</label>
+                    <input type="name" name="name" class="form-control" id="name" placeholder="Имя">
                 </div>
-            </div>
-            <div class=" mb-3">
-                <label for="lastName">Фамилия</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                    Неверный ввод фамилии.
+                <div class="form-group">
+                    <label for="lastname">Фамилия:</label>
+                    <input type="lastname" name="lastname" class="form-control" id="last" placeholder="Фамилия">
                 </div>
-            </div>
-            <div class="mb-3">
                 <label for="date">Дата рождения</label>
-                <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
-                <div class="invalid-feedback">
-                    Введите дату рождения.
+                <div class="row">
+                    <div class="col-xs-4 col-md-4">
+                        <select class="form-control">
+                            <option value="День">День</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <select class="form-control">
+                            <option value="Месяц">Месяц</option>
+                            <option value="Апрель">Апрель</option>
+                            <option value="Май">Май</option>
+                            <option value="Июнь">Июнь</option>
+                            <option value="Июль">Июль</option>
+                            <option value="Август">Август</option>
+                            <option value="Сентябрь">Сентябрь</option>
+                            <option value="Октябрь">Октябрь</option>
+                            <option value="Ноябрь">Ноябрь</option>
+                            <option value="Декабрь">Декабрь</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <select class="form-control">
+                            <option value="Год">Год</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
                 </div>
+                <label>Город</label>
+                <div class="row form-group">
+                    <div class="col-xs-6 col-md-6">
+                        <select class="form-control">
+                            <option>Москва</option>
+                            <option>Санкт-Петербург</option>
+                            <option>Казань</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Отправить</button>
             </div>
-            <div class="seclectgorod">
-                <label for="city">Город</label>
-                <select class="mb-3 custom-select d-block w-100" id="country" required>
-                    <option disabled selected>Выберите город</option>
-                    <option>Москва</option>
-                    <option>Санкт-Петербург</option>
-                    <option>Казань</option>
-                </select>
-            </div>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Отправить</button>
-
-        </form>
+            <div class="col-md-4"> </div>
+        </div>
     </div>
 </body>
-     <script src="javascript/script.js"></script></body>
 </html>
