@@ -9,95 +9,98 @@
     <title>Обучение</title>
 </head>
 <body>
-    <div class="container-fluid h-100">
-        <div class="row">
-            <div class="col-md-4"> </div>
-            <div class="col-md-4 border rounded p-4 m-8 bg-white card d-flex">
-                <div class="form-group">
-                    <h4 class="text-center">Регистрация</h4>
-                    <label for="name">Ваше имя:</label>
-                    <input type="name" name="name" class="form-control" id="name" placeholder="Имя">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Фамилия:</label>
-                    <input type="lastname" name="lastname" class="form-control" id="last" placeholder="Фамилия">
-                </div>
-                <label for="date">Дата рождения</label>
-                <div class="row">
-                    <div class="col-xs-4 col-md-4">
-                        <select class="form-control">
-                            <option value="День">День</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                        </select>
+    <form name="form" action="" onsubmit="return validate();">
+        <div class="container-fluid h-100">
+            <div class="row">
+                <div class="col-md-4"> </div>
+                <div class="col-md-4 border rounded p-4 m-8 bg-white card d-flex">
+                    <div class="form-group">
+                        <h4 class="text-center">Регистрация</h4>
+                        <label for="name">Ваше имя:</label>
+                        <input type="name" name="name" class="form-control" id="name">
                     </div>
-                    <div class="col-xs-4 col-md-4">
-                        <select class="form-control">
-                            <option value="Месяц">Месяц</option>
-                            <option value="Апрель">Апрель</option>
-                            <option value="Май">Май</option>
-                            <option value="Июнь">Июнь</option>
-                            <option value="Июль">Июль</option>
-                            <option value="Август">Август</option>
-                            <option value="Сентябрь">Сентябрь</option>
-                            <option value="Октябрь">Октябрь</option>
-                            <option value="Ноябрь">Ноябрь</option>
-                            <option value="Декабрь">Декабрь</option>
-                        </select>
+                    <div class="form-group">
+                        <label for="lastname">Фамилия:</label>
+                        <input type="lastname" name="lastname" class="form-control" id="last">
                     </div>
-                    <div class="col-xs-4 col-md-4">
-                        <select class="form-control">
-                            <option value="Год">Год</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                        </select>
+                    <label for="date">Дата рождения</label>
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+                            <select class="form-control" id="day">
+                                <option value="День">День</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <select class="form-control" id="month">
+                                <option value="Месяц">Месяц</option>
+                                <option value="Апрель">Апрель</option>
+                                <option value="Май">Май</option>
+                                <option value="Июнь">Июнь</option>
+                                <option value="Июль">Июль</option>
+                                <option value="Август">Август</option>
+                                <option value="Сентябрь">Сентябрь</option>
+                                <option value="Октябрь">Октябрь</option>
+                                <option value="Ноябрь">Ноябрь</option>
+                                <option value="Декабрь">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <select class="form-control" id="year">
+                                <option value="Год">Год</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
                     </div>
+                    <label>Город</label>
+                    <div class="row form-group">
+                        <div class="col-xs-6 col-md-6">
+                            <select class="form-control">
+                                <option value="Город">Выберите город</option>
+                                <option>Москва</option>
+                                <option>Санкт-Петербург</option>
+                                <option>Казань</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Отправить</button>
                 </div>
-                <label>Город</label>
-                <div class="row form-group">
-                    <div class="col-xs-6 col-md-6">
-                        <select class="form-control">
-                            <option value="Город">Выберите город</option>
-                            <option>Москва</option>
-                            <option>Санкт-Петербург</option>
-                            <option>Казань</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Отправить</button>
+                <div class="col-md-4"> </div>
             </div>
-            <div class="col-md-4"> </div>
         </div>
-    </div>
+        </form>
 </body>
+<script src="javascript/script.js"></script></body>
 </html>
