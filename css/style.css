@@ -5,13 +5,16 @@
     -o-background-size: cover;
     background-size: cover;
 }
-
+/*Отступы*/
 .card {
     margin-top: 20%;
 }
-
+/* Обработка ошибок*/
 form .error {
     border-color: red;
 }
 
+label.error {
+    color: red;
+}
 

@@ -24,11 +24,11 @@
     messages: {
         lastname: {
             required: "Поле фамилия обязательно для заполнения",
-            minlength: jQuery.validator.format("Длина имени должна быть больше 10-ти символов")
+            minlength: jQuery.validator.format("Длина должна быть больше 10-ти символов")
         },
         name: {
             required: "Поле имя обязательно для заполнения",
-            minlength: jQuery.validator.format("Длина имени должна быть больше 10-ти символов")
+            minlength: jQuery.validator.format("Длина должна быть больше 10-ти символов")
         },
         day: {
             required: "",
