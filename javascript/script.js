@@ -1,48 +1,69 @@
-﻿function validate() {
+﻿$("#myForm").validate({
+    rules: {
+        name: {
+            required: true,
+            minlength: 10
+        },
+        lastname: {
+            required: true,
+            minlength: 10
+        },
+        day: {
+            required: true,
+            digits: true
+        },
+        year: {
+            required: true,
+            digits: true
+        },
+        month: {
+            validateDate: true
+        }
 
-    event.preventDefault();
+    },
+    messages: {
+        lastname: {
+            required: "Поле фамилия обязательно для заполнения",
+            minlength: jQuery.validator.format("Длина имени должна быть больше 10-ти символов")
+        },
+        name: {
+            required: "Поле имя обязательно для заполнения",
+            minlength: jQuery.validator.format("Длина имени должна быть больше 10-ти символов")
+        },
+        day: {
+            required: "",
+            digits: "",
+        },
+        year: {
+            required: "",
+            digits: "",
+        }
 
-    var name = document.form.name;
-    var lastname = document.getElementById("last");
-
-    var e = document.getElementById("day");
-    var day = document.getElementById("day").options[e.selectedIndex].value;
-
-    var indexMonth = document.getElementById("month").selectedIndex;
-    var month = document.getElementById("month").options[indexMonth].text;
-
-    var indexYear = document.getElementById("month").selectedIndex;
-    var year = document.getElementById("year").options[indexYear].text;
-
-    var ifWrong = false;
-    
-    if (name.value.length > 10 || name.value.length < 1) {
-        name.style.borderColor = "red";
-        isWrong = true;
+    },
+    submitHandler: function () {
+        alert("Валидация успешна!");
     }
+});
 
-    if (lastname.value.length > 10 || lastname.value.length < 1) {
-        lastname.style.borderColor = "red";
-        isWrong = true;
-    }
+jQuery.validator.addMethod("notEqual", function (value, element, param) {
+    return this.optional(element) || value != param;
+}, "");
 
-    if (!parseInt(day) && !parseInt(year) && month === "Месяц") {
-       
-    }
-    else {
-        if (!parseInt(day))
-            document.getElementById("day").style.borderColor = "red";
-        if (!parseInt(year))
-            document.getElementById("year").style.borderColor = "red";
-        if (month === "Месяц")
-            document.getElementById("month").style.borderColor = "red";
-        isWrong = true;
-    }
-
-    if (isWrong) {
-        event.preventDefault();
-        return false;
-    }
-
-    return true;
-}
+jQuery.validator.addMethod("validateDate", function (value, element) {
+    var massMonth = {
+        "Январь": 1,
+        "Февраль": 2,
+        "Март": 3,
+        "Апрель": 4,
+        "Май": 5,
+        "Июнь": 6,
+        "Июль": 7,
+        "Август": 8,
+        "Сентябрь": 9,
+        "Октябрь": 10,
+        "Ноябрь": 11,
+        "Декабрь": 12
+    };
+    var month = massMonth[value];
+    return this.optional(element) || month != undefined;
+}, "");

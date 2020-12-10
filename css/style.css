@@ -1,10 +1,17 @@
-﻿html, body {
+﻿body {
     background: url(../images/trava.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 .card {
-    margin-top: 10%;
+    margin-top: 20%;
 }
+
+form .error {
+    border-color: red;
+}
+
+
