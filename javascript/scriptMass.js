@@ -1,35 +1,6 @@
 ﻿
-// Переменная содержащая номер по которому нужно искать эелмент в массиве
+// Переменная содержащая номер по которому нужно искать элемент в массиве
 var needType = 2;
-
-//Массив с именами
-var _0x794d = ["\x41", "\x48", "\x49", "\x43", "\x44", "\x45", "\x46",
-    "\x47\x65\x74\x44\x61\x74\x61", //7
-    "\x66\x75\x6E\x63\x74\x69\x6F\x6E", //8
-    "\x73\x74\x72\x69\x6E\x67\x69\x66\x79", //9
-    "\x70\x61\x72\x73\x65"];
-
-//Массив с данными и функцией их 
-var Study = new (function () {
-    var _0xeee8x2 = [{ id: 1, name: _0x794d[0], type: 1 }, //1
-    { id: 2, name: null, type: 2 }, //2
-    { id: 7, name: _0x794d[0], type: 3 }, //3
-    { id: 8, type: 1 }, //4
-    { id: 9, name: _0x794d[1], type: 1 }, //5
-    { id: 10, name: _0x794d[2], type: 2 }, //6
-    { id: 3, name: _0x794d[3], type: 1 }, //7
-    { id: 4, name: _0x794d[4], type: 2 }, //8
-    { id: 11, name: _0x794d[5], type: 1 }, //9
-    { id: 6, name: _0x794d[6], type: 1 }]; //10
-
-    this[_0x794d[7]] = function (_0xeee8x3) {
-        if (typeof _0xeee8x3 === _0x794d[8]) {
-            setTimeout(function () {
-                var _0xeee8x4 = JSON[_0x794d[10]](JSON[_0x794d[9]](_0xeee8x2)); _0xeee8x3(_0xeee8x4) //JSON.parse(JSON.stringify(_0xeee8x2))
-            }, 100)
-        }
-    }
-})()
 
 // Вывод массива в приемлемом виде на экран
 var printMass = function (data, text = "") {
@@ -44,6 +15,7 @@ var printMass = function (data, text = "") {
 
 // Сортировка массива по возрастанию id 
 var SortMassById = function (data) {
+    //alert(data[0].id);
     printMass(data.sort((prev, next) => prev.id - next.id), "Сортировка по возрастанию id ");
 }
 
