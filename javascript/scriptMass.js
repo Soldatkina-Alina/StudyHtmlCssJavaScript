@@ -4,18 +4,18 @@ var needType = 2;
 
 // Вывод массива в приемлемом виде на экран
 var printMass = function (data, text = "") {
-    var a = document.getElementById("test");
-    var arr = a.childNodes;
-    for (var i = 0; i < arr.length; i++) {
-        arr[i].innerHTML += "<br/><br><b>" + text + "</b>";
+    var elementDivMass = document.getElementById("divMass");
+    if (elementDivMass == null) return;
+    var elementDivMassNodes = elementDivMass.childNodes;
+    for (var i = 0; i < elementDivMassNodes.length; i++) {
+        elementDivMassNodes[i].innerHTML += "<br/><br><b>" + text + "</b>";
         for (var j = 0; j < data.length; j++)
-            arr[i].innerHTML += "<br/><br>" + "ID:" + data[j]["id"] + " | Name:" + data[j]["name"] + " | Type:" + data[j]["type"];
+            elementDivMassNodes[i].innerHTML += "<br/><br>" + "ID:" + data[j]["id"] + " | Name:" + data[j]["name"] + " | Type:" + data[j]["type"];
     }
 }
 
 // Сортировка массива по возрастанию id 
 var SortMassById = function (data) {
-    //alert(data[0].id);
     printMass(data.sort((prev, next) => prev.id - next.id), "Сортировка по возрастанию id ");
 }
 
@@ -36,7 +36,6 @@ var SortMassByIdAndType = function (data) {
 
 // Выбор из массива элементов, тип которых равен 2
 var getElementWithSomeType = function (data) {
-
     printMass(data.filter(function (val) {
         return val.type === needType;
     }), "Только элементы с type = 2");
@@ -44,7 +43,6 @@ var getElementWithSomeType = function (data) {
 
 // Выбор из массива элементов, тип которых равен 2
 var getElementWithName = function (data) {
-
     printMass(data.filter(function (val) {
         return val.name != undefined;
     }), "Элементы с заполненным именем");
@@ -67,13 +65,12 @@ var addLostIden = function (data) {
 }
 // Выбор из массива элементов с 3 по 5
 var SpliceElem = function (data) {
-
     var removed = data.splice(3, 5);
     printMass(removed, "Элементы с 3 по 5");
 }
 
 // Функция вызывающая поочередно все переменные для дейтсвий с массивом
-var getMass = function () {
+var printAllMass = function () {
     Study.GetData(SortMassById);
 
     Study.GetData(SortMassByIdAndType);
@@ -88,4 +85,4 @@ var getMass = function () {
 }
 
 //Начало работы
-getMass();
+printAllMass();
