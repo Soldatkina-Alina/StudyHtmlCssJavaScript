@@ -72,8 +72,8 @@ jQuery.validator.addMethod("validateDate", function (value, element) {
 }, "");
 
 var createTable = function () {
-    var uName = document.getElementById("name").value;
-
+    
+    $("#grid").jqGrid('clearGridData');
     var mydata = [{
         userName: document.getElementById("name").value,
         userLastName: document.getElementById("lastname").value,
@@ -81,6 +81,7 @@ var createTable = function () {
         city: document.getElementById("city").value
     }
     ];
+
     $("#grid").jqGrid({
         datatype: "local",
         data: mydata,
@@ -101,7 +102,11 @@ var createTable = function () {
         }],
         //multiselect: true,
         height: "auto",
+        cache: false
     });
+
+    $("#grid").jqGrid('setGridParam', { data: mydata });
+    $("#grid").trigger('reloadGrid');
 };
 
 //createTable();
